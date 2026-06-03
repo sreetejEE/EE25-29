@@ -1,0 +1,35 @@
+
+*NGSPICE Question 2
+*Weighted Summing Amplifier using Operational Amplifier
+
+
+*loads the model file Lm358.mod for simulation
+.include "Lm358.mod"
+
+*providing the positive and negative power supply for Op-Amp
+VCC Vcc 0 15
+VEE Vee 0 -15
+
+*Resistor components
+R1 V_1 V_nin 10k
+R2 V_2 V_in 50k
+Rf V_in V_out 50k
+
+
+*defining input voltages using PULSE
+*PULSE(intial_voltage  pulse_voltage delay_time rise_time fall_time  pulse_width period)
+V1 V_1 0 PULSE(0 3 0 1ns 1ns 100 2)
+V2 V_2 0 PULSE(0 2 0 1ns 1ns 100 2)
+
+* Op-Amp Subcircuit for intialising Lm358 model
+* order : (+) (-) VCC VEE out model_name
+XOPAMP V_nin V_in Vcc Vee V_out LM358/NS
+
+
+*control block
+.control
+tran 0.001ms 8ms ;  transient analysis ( from 0 to 8ms with step size 0.001ms)
+plot v(V_1) v(V_2) v(V_out) ; plotting the voltages
+.endc
+
+.end

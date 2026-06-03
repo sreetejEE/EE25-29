@@ -1,0 +1,140 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+\usepackage{comment}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=4em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{sum} = [draw, fill=blue!10, circle, minimum size=1cm, node distance=1.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+\title{7.4.25}
+\author{EE25BTECH11018-Darisy Sreetej}
+ \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
+\textbf{Question}:
+The locus of the centre of a circle, which touches the circle is $x^2 + y^2 -6x -6y +14 =0$ and also touches the y-axis, is given by the equation:
+\begin{enumerate}
+    \item $x^2-6x-10y+14=0$
+    \item $x^2-10x-6y+14=0$
+    \item $y^2-6x-10y+14=0$
+    \item $y^2-10x-6y+14=0$
+\end{enumerate}
+\textbf{Solution}:\\
+Given circle equation can be represented as
+\begin{align}
+    \norm{\vec{x}}^2+2\myvec{-3\\-3}^\top\vec{x}+14=0
+\end{align}
+The centre of circle is $\vec{c}_1=\myvec{3\\3}$ and radius $r=2$ $\brak{\because f= 14 ,\quad \vec{u}=\myvec{-3\\-3}} $\\
+Let the centre of the moving circle be $\vec{c}=\myvec{h\\k}$\\
+As the circle touches $Y-$axis , Distance of a point from $y$-axis is given by
+\begin{align*}
+  \text{radius }  R=h
+\end{align*}
+The equation of moving circle is 
+\begin{align}
+    \norm{\vec{x}}^2+2\myvec{-h\\-k}^\top\vec{x}+k^2=0
+\end{align}
+From (4.1) and (4.2) , the intersection of curves
+\begin{align}
+    \norm{\vec{x}}^2+2\myvec{-3\\-3}^\top\vec{x}+14 -  \norm{\vec{x}}^2-2\myvec{-h\\-k}^\top\vec{x}-k^2 =0 
+    \end{align}
+    \begin{align}
+    2\myvec{h-3\\k-3}^\top\vec{x}= k^2-14
+\end{align}
+The equation of the common tangent is 
+\begin{align}
+\myvec{h-3\\k-3}^\top\vec{x}= \frac{k^2-14}{2}
+\end{align}
+Distance between the common tangent and centre of given circle equal to it's radius
+\begin{align}
+ 2=\frac{\mydet{\myvec{h-3&k-3}\myvec{3\\3}-\frac{k^2-14}{2}}}{\sqrt{(h-3)^2 + (k-3)^2}}
+\end{align}
+\begin{align}
+2= \frac{\mydet{3(h-3)+3(k-3)-\frac{k^2-14}{2}}}{\sqrt{(h-3)^2 + (k-3)^2}}
+\end{align}
+\begin{align}
+2\sqrt{(h-3)^2 + (k-3)^2}= 3h +3k -\frac{k^2}{2}-11\\
+\end{align}
+Squaring both sides
+\begin{align}
+4({(h-3)^2 + (k-3)^2})= (3h +3k -\frac{k^2}{2}-11)^2
+\end{align}
+\begin{align}
+4h^2+4k^2-24h-24k+72=\frac{k^4}{4}+9h^2+20k^2+121+18hk-66h-66k-3hk^2-3k^3
+\end{align}
+\begin{align}
+    k^4-12k^3+(64-12h)k^2+72hk+20h^2-168h-168k+196=0
+\end{align}
+\begin{align}
+    (k^2-10h-6k+14)(k^2-6k-2h+14)=0
+\end{align}
+The possible general loci are 
+\begin{align}
+    y^2-10x-6y+14=0 \\
+    y^2-6y-2x+14=0
+\end{align}
+From the options , the locus of the centre of the circle is 
+\begin{align}
+     y^2-10x-6y+14=0
+\end{align}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\columnwidth]{figs/fig.png}
+	\caption{}
+   \label{}
+\end{figure}
+\end{document}  
